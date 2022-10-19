@@ -6,15 +6,6 @@ class Order{
         this.content = content;
         this.type = type;
     }
-
-    displayOrder(order){
-        document.getElementById("order-list").innerHTML= JSON.stringify(order, null, 4);
-    }
-
-    removeOrder(order){
-        //remove oldest order from array
-        order.shift();
-    }
 }
 
 document.querySelector('form').addEventListener('submit', (e) => {
@@ -27,8 +18,18 @@ document.querySelector('form').addEventListener('submit', (e) => {
     let newOrder = new Order(formname, formtype, formcontent, formdate);
     //push new order onto array
     orderArray.push(newOrder);
-    newOrder.displayOrder(orderArray);
+    displayOrder(orderArray);
     console.log(orderArray);
 });
 
 var orderArray = [];
+
+function removeOrder(){
+    //remove oldest order from array
+    orderArray.shift();
+    displayOrder(orderArray);
+}
+
+function displayOrder(order){
+    document.getElementById("order-list").innerHTML= JSON.stringify(order, null, 4).replace(/]|[[]/g, '');
+}
