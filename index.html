@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- form with options for name, date/time ordered, type tag, content-->
+    <form id="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <label for="type">Type:</label>
+        <select name="type" id="type">
+            <option value="drink">Drink</option>
+            <option value="entree">Entree</option>
+            <option value="sides">Sides</option>
+            <option value="dessert">Dessert</option>
+        </select>
+        <label for="content">Order:</label>
+        <select name="type" id="content">
+            <option value="cofee">Coffee</option>
+            <option value="tea">Tea</option>
+            <option value="sandwich">Sandwich</option>
+            <option value="fries">Fries</option>
+            <option value="icecream">Ice Cream</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" value="2022-10-10">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="order-list"></div>
+    <button onclick="removeOrder()">Remove Oldest Order</button>
+    <div class="bar-graph"></div>
+    <script src="app.js"></script>
+</body>
+</html>
